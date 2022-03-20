@@ -23,6 +23,8 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
 # Install nnn file manager
 # Before install nnn, install pkg-config first
 brew install pkg-config
+# `preview-tui` plugin needs install tree to preview directory tree
+brew install tree
 echo $fg_bold[green] "Install nnn file manager"
 echo $fg[white] ""
 git clone https://github.com/jarun/nnn.git ~/.nnn
