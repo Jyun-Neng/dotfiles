@@ -107,6 +107,7 @@ alias nnn="nnn -e"
 
 export NNN_FIFO="$HOME/.nnn/nnn.fifo"
 export NNN_PLUG='f:finder;o:fzopen;d:diffs;p:preview-tui;j:autojump;c:fzcd'
+export PAGER="less -Ri"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
