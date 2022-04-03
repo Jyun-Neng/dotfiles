@@ -53,3 +53,12 @@ For Tmux configuration, I recommand using [Gregory's Tmux configurations](https:
 ```shell
 stow .tmux
 ```
+
+### Setting up NEOVIM
+
+1. Read [README](https://github.com/Jyun-Neng/dotfiles/tree/master/.neovim/README.md) in `.neovim`
+2. Create symlink of my vim configuration to your `$HOME` directory
+```shell
+stow .neovim
+```
+
