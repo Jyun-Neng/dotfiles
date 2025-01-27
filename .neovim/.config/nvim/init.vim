@@ -14,7 +14,6 @@ Plug 'google/vim-searchindex'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'ryanoasis/vim-devicons'
-Plug 'honza/vim-snippets'
 Plug 'frazrepo/vim-rainbow'
 " Plugins with hotkeys
 Plug 'preservim/nerdtree'
@@ -22,18 +21,11 @@ Plug 'preservim/tagbar'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
 Plug 'mg979/vim-visual-multi'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
 " Initialize plugin system
 call plug#end()
 " Enable % to jump between matching keywords
 runtime macros/matchit.vim
-" YCM settings
-let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" Ultisnips settings
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
 " vim-visual-multi settings
 let g:VM_maps = {}
 let g:VM_maps['Find Under']         = '<C-d>'

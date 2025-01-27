@@ -14,16 +14,13 @@
   - [lightline.vim](https://github.com/itchyny/lightline.vim)
   - [lightline-bufferline](https://github.com/mengelbrecht/lightline-bufferline)
   - [vim-devicons](https://github.com/ryanoasis/vim-devicons)
-  - [vim-snippets](https://github.com/honza/vim-snippets)
   - [vim-rainbow](https://github.com/frazrepo/vim-rainbow)
   - [nerdtree](https://github.com/preservim/nerdtree)
   - [tagbar](https://github.com/preservim/tagbar)
   - [vim-easy-align](https://github.com/junegunn/vim-easy-align)
   - [vim-commentary](https://github.com/tpope/vim-commentary)
   - [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
-  - [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
-  - [ultisnips](https://github.com/SirVer/ultisnips)
   - [vim-surround](https://github.com/tpope/vim-surround)
 
-  **NOTE**: `YouCompleteMe` and `tagbar` have to install some other tools. You have to read the README of those two plugins first to understand how to install these plugins.
+  **NOTE**: `tagbar` has to install some other tools. You have to read the README of those two plugins first to understand how to install these plugins.
 
