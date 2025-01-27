@@ -5,8 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.nnn/bin:$PATH
+export PATH=$PATH:/opt/homebrew/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -79,9 +78,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
         git
+        z
         fast-syntax-highlighting
         zsh-autosuggestions
-        autojump
         fzf
 )
 
@@ -102,17 +101,8 @@ export EDITOR='nvim'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. For a full list of active aliases, run `alias`.
-alias ls="nnn -e"
-alias nnn="nnn -e"
-
-export NNN_FIFO="$HOME/.nnn/nnn.fifo"
-export NNN_PLUG='f:finder;o:fzopen;d:diffs;p:preview-tui;j:autojump;c:fzcd'
-export PAGER="less -Ri"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

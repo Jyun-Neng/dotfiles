@@ -32,15 +32,16 @@ After you did all above, you may now follow instructions below to setup
 ```
 2. Install all plugins and tools required in zsh configurations
 ```shell
-./install-nnn-plugins.sh
 ./zsh-setup.sh
 ```
+**NOTE**: `zsh-setup.sh` will install [fzf](https://github.com/junegunn/fzf). To know how to use these tools, you can enter each link.
+
 3. Create symlink of all zsh configurations to your `$HOME` directory
 ```shell
 stow .zsh
 ```
 
-**NOTE**: `zsh-setup.sh` will install [nnn](https://github.com/jarun/nnn), [fzf](https://github.com/junegunn/fzf), and [autojump](https://github.com/wting/autojump). To know how to use these tools, you can enter each link.
+This zsh setting uses [Powerlevel10k](https://github.com/romkatv/powerlevel10k). If the icons are not showing, please check if you are using [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts). Please see [Fonts](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#fonts) for the detail.
 
 ### Setting up Tmux
 For Tmux configuration, I recommand using [Gregory's Tmux configurations](https://github.com/gpakosz/.tmux).
