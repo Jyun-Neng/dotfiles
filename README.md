@@ -34,7 +34,7 @@ After you did all above, you may now follow instructions below to setup
 ```shell
 ./zsh-setup.sh
 ```
-**NOTE**: `zsh-setup.sh` will install [fzf](https://github.com/junegunn/fzf). To know how to use these tools, you can enter each link.
+**NOTE**: `zsh-setup.sh` will install [fzf](https://github.com/junegunn/fzf). To know how to use fzf, you can enter the link.
 
 3. Create symlink of all zsh configurations to your `$HOME` directory
 ```shell

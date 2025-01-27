@@ -82,6 +82,7 @@ plugins=(
         fast-syntax-highlighting
         zsh-autosuggestions
         fzf
+        zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
