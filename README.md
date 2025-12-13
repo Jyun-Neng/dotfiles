@@ -1,65 +1,73 @@
-# Jyun-Neng's dotfiles for macOS
+# Jyun-Neng's macOS Dotfiles
 
-![cover](./images/cover.png)
+## 🌟 Introduction
 
-## Introduction
+This repository contains my personal dotfiles for setting up and configuring a new macOS environment.
 
-This repository serves as my way to setup my Mac. Feel free to copy parts for your own dotfiles.
+Feel free to copy, adapt, and use any parts for your own setup!
 
-## Setting up your Mac
+## 🛠️ Prerequisites & Initial Setup
 
-### Before you apply this repo to set up your Mac
+Before applying these configurations, please ensure you have the following tools and steps completed:
 
-I recommand you follow this [video](https://youtu.be/RNqDkF17ogY) to set up your Mac first. But you do not have to install his dotfiles.
+### Essential Tools
 
-Another tool you need is [GNU Stow](https://www.gnu.org/software/stow/). I use this to manage my dotfiles.
+* [**Homebrew**](https://brew.sh/): A package manager for macOS.
+* [**GNU Stow**](https://www.gnu.org/software/stow/): Used for managing and symlinking the dotfiles into their respective directories.
+    ```shell
+    brew install stow
+    ```
+* [**Starship**](https://starship.rs/): A minimal, blazing-fast, and infinitely customizable prompt for any shell.
+    ```shell
+    brew install starship 
+    ```
+* [**Nerd Fonts Repository**](https://github.com/ryanoasis/nerd-fonts): Provides beautiful, enhanced fonts for terminal use.
 
-```shell
-brew install stow
-```
+### Recommended Setup Guide
 
-After you did all above, you may now follow instructions below to setup
+I highly recommend following this [**video**](https://youtu.be/RNqDkF17ogY) guide for the general setup of your Mac (you can skip the part where he installs his personal dotfiles):
 
-1. shell (ZSH), 
-2. tmux, and
-3. neovim (TODO)
+## 🚀 Configuration Guides
 
-### Setting up ZSH
+Once the prerequisites are met, follow the steps below to configure the individual components.
 
-1. Install [Oh My Zsh](https://ohmyz.sh)
-```shell
-./install-oh-my-zsh.sh
-```
-2. Install all plugins and tools required in zsh configurations
-```shell
-./zsh-setup.sh
-```
-**NOTE**: `zsh-setup.sh` will install [fzf](https://github.com/junegunn/fzf). To know how to use fzf, you can enter the link.
+---
 
-3. Create symlink of all zsh configurations to your `$HOME` directory
-```shell
-stow .zsh
-```
+### 1. Shell (ZSH) Setup
 
-This zsh setting uses [Powerlevel10k](https://github.com/romkatv/powerlevel10k). If the icons are not showing, please check if you are using [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts). Please see [Fonts](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#fonts) for the detail.
+This configuration uses Zsh along with several popular plugins.
 
-### Setting up Tmux
-For Tmux configuration, I recommand using [Gregory's Tmux configurations](https://github.com/gpakosz/.tmux).
+1.  **Install Oh My Zsh and Zsh Plugins**
+    * This script installs [Oh My Zsh](https://ohmyz.sh), [fzf](https://github.com/junegunn/fzf), and all required Zsh plugins.
+    ```shell
+    bash zsh-setup.sh
+    ```
+    > **Note:** To learn how to use `fzf`, please refer to the linked repository.
 
-1. Install Gregory's Tmux configuration
-```shell
-./tmux-setup.sh
-```
-2. Create symlink of my tmux configuration to your `$HOME` directory
-```shell
-stow .tmux
-```
+2.  **Create Configuration Symlinks**
+    * Use the main setup script to create symlinks for all ZSH configuration files in their corresponding directories using `stow`.
+    ```shell
+    bash setup.sh
+    ```
 
-### Setting up NEOVIM
+3.  **Apply Fast-Syntax-Highlighting Theme**
+    * **Restart** your terminal session.
+    * Switch the fast-syntax-highlighting theme to `Catppuccin-Mocha`.
+    ```shell
+    fast-theme XDG:catppuccin/themes/catppuccin-mocha
+    ```
 
-1. Read [README](https://github.com/Jyun-Neng/dotfiles/tree/master/.neovim/README.md) in `.neovim`
-2. Create symlink of my vim configuration to your `$HOME` directory
-```shell
-stow .neovim
-```
+---
+
+### 2. TMUX Setup (WIP - Work In Progress)
+
+* *Currently under development.*
+
+---
+
+### 3. Neovim Setup (WIP - Work In Progress)
+
+1.  **Review Neovim README**
+    * Please read the specific setup instructions for the Neovim configuration.
+    * [**Neovim Configuration README**](https://github.com/Jyun-Neng/dotfiles/tree/master/.neovim/README.md)
 
