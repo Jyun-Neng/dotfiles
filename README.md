@@ -23,7 +23,7 @@ Before applying these configurations, please ensure you have the following tools
     ```
 * [**Zoxide**](https://github.com/ajeetdsouza/zoxide): A smarter `cd` command.
     ```shell
-    brew install starship 
+    brew install zoxide 
     ```
 * [**Nerd Fonts Repository**](https://github.com/ryanoasis/nerd-fonts): Provides beautiful, enhanced fonts for terminal use.
 
