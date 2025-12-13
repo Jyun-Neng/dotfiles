@@ -21,6 +21,10 @@ Before applying these configurations, please ensure you have the following tools
     ```shell
     brew install starship 
     ```
+* [**Zoxide**](https://github.com/ajeetdsouza/zoxide): A smarter `cd` command.
+    ```shell
+    brew install starship 
+    ```
 * [**Nerd Fonts Repository**](https://github.com/ryanoasis/nerd-fonts): Provides beautiful, enhanced fonts for terminal use.
 
 ### Recommended Setup Guide
