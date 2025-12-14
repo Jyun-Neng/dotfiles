@@ -5,6 +5,10 @@
 # locations. This script assumes the current working directory is the root
 # of the dotfiles repository.
 
+# Set strict mode: Exit immediately if a command exits with a non-zero status.
+# Fail on usage of an uninitialized variable.
+set -eu
+
 # --- Configuration ---
 
 # Target directory for general configurations.
@@ -13,26 +17,50 @@ readonly CONFIG_DIR="${HOME}/.config"
 # Target directory for zsh configuration (usually HOME).
 readonly ZSH_TARGET_DIR="${HOME}"
 
+# Target directory for tmux configuration
+readonly TMUX_TARGET_DIR="${CONFIG_DIR}/tmux"
+
 # --- Helper Functions ---
 
-# Function to execute a stow command and check its success.
+# Executes a stow command to symlink a package.
 # Arguments:
 #   1: The package name (e.g., 'zsh', 'starship').
 #   2: The target directory (e.g., '$HOME', '$HOME/.config').
+# Returns:
+#   0 on success, 1 on failure.
 function run_stow() {
   local package="$1"
   local target_dir="$2"
 
   echo "Attempting to stow '${package}' to '${target_dir}'..."
 
-  # The main stow command execution.
+  # Execute stow command.
   if command stow --target "${target_dir}" "${package}"; then
     echo "SUCCESS: '${package}' stowed successfully."
+    return 0
   else
-    # Output error details if the command fails.
     echo "ERROR: Failed to stow '${package}'." >&2
-    # Exit with a non-zero status to indicate failure.
     return 1
+  fi
+}
+
+# Checks if a directory exists and creates it if it does not.
+# Arguments:
+#   1: The directory path to check/create.
+function ensure_directory_exists() {
+  local dir_path="$1"
+
+  if [[ ! -d "${dir_path}" ]]; then
+    echo "Directory '${dir_path}' does not exist. Creating it..."
+
+    # mkdir -p creates parent directories as needed and does not fail if the directory exists.
+    if mkdir -p "${dir_path}"; then
+      echo "SUCCESS: Directory '${dir_path}' created."
+    else
+      echo "FATAL: Failed to create directory '${dir_path}'." >&2
+      # Exit the entire script on directory creation failure.
+      exit 1
+    fi
   fi
 }
 
@@ -44,16 +72,22 @@ if ! command -v stow &>/dev/null; then
   exit 1
 fi
 
+# Ensure all the target directories exists before stowing.
+ensure_directory_exists "${CONFIG_DIR}"
+ensure_directory_exists "${ZSH_TARGET_DIR}"
+ensure_directory_exists "${TMUX_TARGET_DIR}"
+
+# Remove existing .zshrc to allow clean symlinking.
 rm -rf "$HOME/.zshrc"
 
-# 1. Stow 'zsh' package to the home directory.
-# This assumes the 'zsh' directory in your dotfiles contains files/dirs
-# that should go directly into $HOME (e.g., .zshrc).
+# 1. Stow 'zsh' package
 run_stow "zsh" "${ZSH_TARGET_DIR}" || exit $?
 
-# 2. Stow 'starship' package to the .config directory.
-# This is explicitly what you requested for starship.
+# 2. Stow 'starship' package
 run_stow "starship" "${CONFIG_DIR}" || exit $?
+
+# 3. Stow 'tmux' package
+run_stow "tmux" "${TMUX_TARGET_DIR}" || exit $?
 
 echo "---"
 echo "Dotfile setup complete."
