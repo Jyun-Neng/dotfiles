@@ -76,6 +76,8 @@ After creating the symlinks, you must apply Fast-Syntax-Highlighting theme:
 Tmux plugins must be manually fetched after the symlinks are created:
   * Run `tmux` and press `prefix` (`Ctrl+q`) + `I` (capital i) to fetch and install the plugins
 
+---
+
 ## 🤝 Contribution
 
 If you have any suggestions or find any issues, feel free to open an issue or submit a pull request!
