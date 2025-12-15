@@ -20,6 +20,9 @@ readonly ZSH_TARGET_DIR="${HOME}"
 # Target directory for tmux configuration
 readonly TMUX_TARGET_DIR="${CONFIG_DIR}/tmux"
 
+# Target directory for nvim configuration
+readonly TMUX_TARGET_DIR="${CONFIG_DIR}/nvim"
+
 # --- Helper Functions ---
 
 # Executes a stow command to symlink a package.
@@ -88,6 +91,9 @@ run_stow "starship" "${CONFIG_DIR}" || exit $?
 
 # 3. Stow 'tmux' package
 run_stow "tmux" "${TMUX_TARGET_DIR}" || exit $?
+
+# 4. Stow 'nvim' package
+run_stow "nvim" "${NVIM_TARGET_DIR}" || exit $?
 
 echo "---"
 echo "Dotfile setup complete."
