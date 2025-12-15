@@ -1,5 +1,7 @@
 # Jyun-Neng's MacOS Dotfiles
 
+![cover](./images/cover.png) 
+
 ## 🌟 Introduction
 
 This repository contains my personal dotfiles for setting up and configuring a new macOS environment.
