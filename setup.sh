@@ -21,7 +21,10 @@ readonly ZSH_TARGET_DIR="${HOME}"
 readonly TMUX_TARGET_DIR="${CONFIG_DIR}/tmux"
 
 # Target directory for nvim configuration
-readonly TMUX_TARGET_DIR="${CONFIG_DIR}/nvim"
+readonly NVIM_TARGET_DIR="${CONFIG_DIR}/nvim"
+
+# Target directory for Claude Code configuration
+readonly CLAUDE_TARGET_DIR="${HOME}/.claude"
 
 # --- Helper Functions ---
 
@@ -79,6 +82,7 @@ fi
 ensure_directory_exists "${CONFIG_DIR}"
 ensure_directory_exists "${ZSH_TARGET_DIR}"
 ensure_directory_exists "${TMUX_TARGET_DIR}"
+ensure_directory_exists "${CLAUDE_TARGET_DIR}"
 
 # Remove existing .zshrc to allow clean symlinking.
 rm -rf "$HOME/.zshrc"
@@ -94,6 +98,9 @@ run_stow "tmux" "${TMUX_TARGET_DIR}" || exit $?
 
 # 4. Stow 'nvim' package
 run_stow "nvim" "${NVIM_TARGET_DIR}" || exit $?
+
+# 5. Stow 'claude' package
+run_stow "claude" "${CLAUDE_TARGET_DIR}" || exit $?
 
 echo "---"
 echo "Dotfile setup complete."
